@@ -1,3 +1,5 @@
+class OutOfRangeError(ValueError):
+    pass
 class Errors : pass
 class InvalidSyntax(Errors):pass
 
@@ -8,7 +10,7 @@ class Animal:
         self.weight=weight
 
 class Giraffe(Animal):
-    def __init__(self, age,sex, weight, height,food,health):
+    def __init__(self, age,sex, weight, height,food,healthcare):
         Animal.__init__(self,age,sex,weight)
         self.height=height
         self.food=food #score between 0 and 100 (typ int)
@@ -17,8 +19,12 @@ class Giraffe(Animal):
     def get_height(self):
         return self.height
     
+    def add_food(self, foo):
+        self.food += foo
+        return self.food
+    
     def get_daily_check(self):
-        if self.health<5.0:
+        if self.healthcare<5.0:
             print("Call the vet immediately")
         if self.food<50 :
             print("Give him some supplements")
