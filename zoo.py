@@ -45,9 +45,6 @@ class Elephant(Animal):
         print ("I am ", self.name, " and I am a ", self.species, " elephant from", self.origin)
         return (0)
 
-    def tusks(self):
-        print("I have two tusks!")
-        return(0)
 
 if __name__=="__main__":
     Animal1=Giraffe(13,"female",120,5.2,70,4.0)
