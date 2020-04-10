@@ -25,11 +25,20 @@ class Giraffe(Animal):
                     print("Give him some supplements")
 
 class Elephant(Animal):
-    def __init__(self, age,sex, weight, name, species, origin):
+    def __init__(self, age,sex, weight, name, species, origin, children):
         Animal.__init__(self,age,sex,weight)
         self.name=name
         self.species=species
         self.origin=origin
+        self.children = children #a list with the names of the children
+        
+    def new_birth(self,name):
+        self.children = self.children + [name]
+        print (self.name, "gave birth to", name)
+        return (0)
+
+    def get_children(self):
+        return self.children
         
         
     def presentation(self):
