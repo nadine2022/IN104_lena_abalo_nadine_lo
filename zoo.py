@@ -1,3 +1,6 @@
+class Errors : pass
+class InvalidSyntax(Errors):pass
+
 class Animal:
     def __init__(self,age,sex,weight):
         self.age=age
