@@ -5,6 +5,6 @@ from apinews1 import nombre_articles
 #On décide donc que 2.000.000 correspond au score de 100 et on calcule avec cet indicateur 
 
 def give_score(nombre):
-    N= 2.000.000
+    N= 2000000
     score = nombre*100/N
-    return (score)
+    return score
