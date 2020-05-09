@@ -8,6 +8,7 @@ def selection():
 
     #Séparer les points de ponctuation des mots
     for i,x in enumerate(L):
+       
         n=len(L[i])
         if L[i][n-1] in string.punctuation :
             L[i]=L[i][:n-1]
@@ -18,7 +19,7 @@ def selection():
     for i,x in enumerate(L):
 
     #élimination des mots courts(sauf les sigles), ponctuation et chiffres
-        if ((len(x)<4) and (x[len(x)-1] not in string.ascii_uppercase)):
+        if ((len(x)<3) and (x[len(x)-1] not in string.ascii_uppercase)):
             T.pop(T.index(x))
         
         n=len(x)
@@ -39,8 +40,9 @@ def selection():
 
     # séléction des mots-clés en utilisant apinews1
     mots_clés=[]
+    
     for x in T:
-        if (nombre_articles(x)<=100000):
+        if ((nombre_articles(x)<=100000) or (x=='not')): #on garde les négations
             mots_clés.append(x)
 
     return(mots_clés) # les mots les plus importants
