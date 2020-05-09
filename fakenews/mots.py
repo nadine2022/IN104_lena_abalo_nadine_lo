@@ -40,7 +40,7 @@ def selection():
     # séléction des mots-clés en utilisant apinews1
     mots_clés=[]
     for x in T:
-        if (nombre_articles(x)<=60000):
+        if (nombre_articles(x)<=100000):
             mots_clés.append(x)
 
     return(mots_clés) # les mots les plus importants
