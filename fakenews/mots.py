@@ -26,7 +26,7 @@ def selection():
 
         #élimination d'une partie d'adjectifs, d'adverbes
     
-        terminaison_2_lettres=["ly","ed","al","er"]
+        terminaison_2_lettres=["ed","al","er"]
         terminaison_3_lettres=["ive","ful","ble","ant","ing"]
         terminaison_4_lettres=["less"]
 
@@ -42,7 +42,7 @@ def selection():
     mots_clés=[]
     
     for x in T:
-        if ((nombre_articles(x)<=100000) or (x=='not')): #on garde les négations
+        if ((nombre_articles(x)<=500000) or (x=='not')): #on garde les négations
             mots_clés.append(x)
 
     return(mots_clés) # les mots les plus importants
