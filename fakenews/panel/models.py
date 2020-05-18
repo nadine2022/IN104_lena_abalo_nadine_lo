@@ -5,6 +5,7 @@ class Article(models.Model):
     source=models.CharField(max_length=50)
     title=models.CharField(max_length=50)
     pub_date=models.DateTimeField('date published')
-    
+
+
     def __str__(self):
         return self.source
