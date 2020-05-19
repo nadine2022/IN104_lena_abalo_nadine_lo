@@ -38,7 +38,7 @@ def selection():
             T.pop(T.index(x))
 
 
-    # séléction des mots-clés en utilisant apinews1
+    # sélection des mots-clés en utilisant apinews1
     mots_cles=[]
     
     for x in T:
