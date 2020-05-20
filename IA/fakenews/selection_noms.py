@@ -2,8 +2,8 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 
-def selection_noms(): #Fonction qui sélectionne les mots importants
-    txt=input('News : ')
+def selection_noms(txt): #Fonction qui sélectionne les mots importants
+   
     doc = nlp(txt)
     mots=[token.text for token in doc]
     nat = [token.pos_ for token in doc]
@@ -17,6 +17,6 @@ def selection_noms(): #Fonction qui sélectionne les mots importants
         if lex.is_stop == False and (nat[i] != 'VERB') and (nat[i] != 'AUX'):  #On ne considère que les mots qui ne sont ni des stopswords(adjectfs, adverbes, pronoms...), ni des verbes                 
             mots_filtres+=mots[i]+' ' 
  
-    print(mots_filtres)   
+    return mots_filtres  
 
-selection_noms()
+

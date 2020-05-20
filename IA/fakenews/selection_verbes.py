@@ -1,8 +1,8 @@
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
-def selection_verbes(): #fonction qui séléctionne les verbes de la phrase pour la 2e sélection
-    txt=input('News : ')
+def selection_verbes(txt): #fonction qui séléctionne les verbes de la phrase pour la 2e sélection
+    
     doc = nlp(txt)
     
     verbs=''
@@ -16,6 +16,4 @@ def selection_verbes(): #fonction qui séléctionne les verbes de la phrase pour
     
     doc1=nlp(verbs)  #On crée un doc avec les verbes afin de pouvoir les mettre à l'infinitif
     verb_list=[token.lemma_ for token in doc1]
-    print (verb_list)  
-
-selection_verbes()
+    return verb_list  
