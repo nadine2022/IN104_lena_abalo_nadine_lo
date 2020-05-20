@@ -20,23 +20,24 @@ def selection_2(verbs, nouns): # verbs =liste des verbes tokenisés de la phrase
     
     data1= newsapi.get_everything(q=nouns,sources='abc-news,bbc-news,bbc-sport,bleacher-report,business-insider,business-insider-uk,cbs-news,cnbc,cnn,engadget,espn,independent,mashable,national-geographic,nbc-news,new-scientist,newsweek,new-york-magazine,reuters,the-verge,the-wall-street-journal,the-washington-post,the washington-times,time,usa-today', language='en')
     
-    n=len(data1['articles']) #taille de la base de données
    
     m=len(verbs)
     p=0 #nombre d'articles qui passent la deuxième séléction
    
 
-    for i in range(0,n):
+    for i in range(0,len(data1['articles'])):# en réalité, on ne peut avoir qu'accès à un nombre limité d'articles, car avec les contenus intégrals, la base de données est vite saturée, il est possible de lire que les premiers.
+        
         #pour chaque article on veut relever les verbes à l'infinitif
         
         #texte de l'article
+        
         doc=nlp(data1['articles'][i]['content'])
         L=[] #liste où on va mettre les verbes
         
         for token in doc :
             if (token.pos==100):
                 L.append(token.lemma_)
-      
+        
         f=1
         for j in range(0,m):
             
@@ -44,16 +45,11 @@ def selection_2(verbs, nouns): # verbs =liste des verbes tokenisés de la phrase
                 f=0
         if (f==1):
             p=p+1
-                
-    return [p,n]   #le nombre d'articles qui ont été trouvés et qui serviront pour le score, et le nombre total d'articles trouvés lors de la première sélection
 
-
-def testons():
-    txt=input('News : ')
-    mots_filtres=selection_noms(txt)
-    verb_list=selection_verbes(txt)
-    p=selection_2(verb_list,mots_filtres)[0]
-    print(p)
     
+    proportion=p/len(data1['articles'])  #on a fait une étude sur un échantillon, on en a déduit une probabilité qu'on applique ensuite au nombre total réel          
+    return proportion
+
+
         
         

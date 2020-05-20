@@ -1,9 +1,9 @@
 import string
 from apinews1 import nombre_articles
 
-def selection():
+def selection(fact):#On veut détecter les mots clés à changer avec les données de l'utilisateur
 
-    fact=input('Rentrez une phrase : ') #On veut détecter les mots clés à changer avec les données de l'utilisateur
+    
     L=fact.split()
 
     #Séparer les points de ponctuation des mots
@@ -42,7 +42,7 @@ def selection():
     mots_cles=[]
     
     for x in T:
-        if ((nombre_articles(x)<=500000) or (x=='not')): #on garde les négations
+        if ((nombre_articles(x)<=50000) or (x=='not')): #on garde les négations
             mots_cles.append(x)
 
     return(mots_cles) # les mots les plus importants
