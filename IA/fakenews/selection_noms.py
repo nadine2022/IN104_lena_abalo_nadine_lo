@@ -14,7 +14,7 @@ def selection_noms(txt): #Fonction qui sélectionne les mots importants
     n=len(mots)
     for i in range(0,n):
         lex = nlp.vocab[mots[i]]
-        if lex.is_stop == False and (nat[i] != 'VERB') and (nat[i] != 'AUX'):  #On ne considère que les mots qui ne sont ni des stopswords(adjectfs, adverbes, pronoms...), ni des verbes                 
+        if lex.is_stop == False and (nat[i] != 'VERB') and (nat[i] != 'AUX'):  #On ne considère que les mots qui ne sont ni des stopswords(adverbes, pronoms...), ni des verbes                 
             mots_filtres+=mots[i]+' ' 
  
     return mots_filtres  
