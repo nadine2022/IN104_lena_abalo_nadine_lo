@@ -11,23 +11,23 @@ class KnownValues(unittest.TestCase):
          ["Donald","Trump","US","President"]),
 
         ("Italy counts more than one million coronavirus cases.",
-         ["Italy","counts","than","million","coronavirus","cases"]),
+         ["Italy","counts","more","than","one","million","coronavirus","cases"]),
 
         ("France won the last World Cup.",
-         ["France","won","last","Cup"]),
+         ["France","won","last","World","Cup"]),
 
         ("Scientists consider that the earth is flat.",
          ["Scientists","earth","flat"]),
 
         ("Facebook is going to launch a new cryptomoney.",
-         ["Facebook","launch","cryptomoney"]))
+         ["Facebook","launch","new","cryptomoney"]))
 
 
     def test_selection_mots(self):
         '''the phrase should give these important words'''
 
         for phrase, mots in self.known_values:
-            result=mots.selection(phrase)
+            result=selection(phrase)
             self.assertEqual(result,mots)
 
 if __name__=='__main__':
