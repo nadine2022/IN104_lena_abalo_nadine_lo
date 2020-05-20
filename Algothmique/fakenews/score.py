@@ -5,7 +5,9 @@ from mots import selection
 
 def give_score():
     fact=input('Rentrez une phrase : ') #On veut détecter les mots clés à changer avec les données de l'utilisateur
-
+    L= fact.split()
+    if len(L)<3:
+        raise OutOfRangeError("You have to write at least 3 words")
     mots_cles=selection(fact)
     indic = nombre_articles(mots_cles[0]) #On utilise comme indicateur le mot avec le moins d'apparitions dans les articles  
     for i in range (1, len(mots_cles)):
