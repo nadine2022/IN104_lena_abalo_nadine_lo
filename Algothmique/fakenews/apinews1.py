@@ -1,5 +1,5 @@
 from newsapi import NewsApiClient
-from panel.models import Article
+#from panel.models import Article
 
 newsapi=NewsApiClient(api_key='cc48bcc39628400db2715d790b287b32')
 
