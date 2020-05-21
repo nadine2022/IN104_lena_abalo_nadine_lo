@@ -3,8 +3,7 @@ from mots import mots_cles_a_chercher
 from mots import selection
 
 
-def give_score():
-    fact=input('Rentrez une phrase : ') #On veut détecter les mots clés à changer avec les données de l'utilisateur
+def give_score(fact):
     L= fact.split()
     if len(L)<3:
         raise OutOfRangeError("You have to write at least 3 words")
