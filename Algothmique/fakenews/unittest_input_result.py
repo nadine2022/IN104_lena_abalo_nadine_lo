@@ -1,20 +1,22 @@
 import score 
 import unittest
-from score import give_score, OutOfRangeError
+from score import give_score,OutOfRangeError
+
+### pour le test, changer quelques lignes dans la fonction give_score dans score.py, afin d'avoir comme paramètre de la fonction la phrase de l'utilisateur (enlever le input)
 
 class KnownValues(unittest.TestCase):
     known_values = (
         (
-            "US counts more than one milion coronavirus cases",
-            40
-        ),
-        (
             "France won the last World Cup",
-            65
+            True
         ),
         (
-            "Donald Trump is the US president",
-            52
+            "Donald Trump becomes the US president",
+            True
+        ),
+        (
+            "Queen Elizabeth wants to abdicate",
+            False
         ),
         
     )
@@ -22,7 +24,11 @@ class KnownValues(unittest.TestCase):
     def test_score_known_values(self):
         """give_score should give known result with known input"""
         for phrase, known in self.known_values:
-            self.assertEqual(known, give_score(phrase))
+            if (give_score(phrase)>=50):
+                etat=True
+            else :
+                etat=False
+            self.assertEqual(known,etat)
 
 
 class ScoreBadInput(unittest.TestCase):
@@ -37,5 +43,5 @@ class ScoreBadInput(unittest.TestCase):
         phrase="Macron is"
         self.assertRaises(OutOfRangeError, give_score, phrase)
         
- if __name__ == "__main__":
+if __name__ == "__main__":
     unittest.main()

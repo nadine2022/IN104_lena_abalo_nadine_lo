@@ -29,8 +29,7 @@ def selection_2(verbs, nouns): # verbs =liste des verbes tokenisés de la phrase
         
         #pour chaque article on veut relever les verbes à l'infinitif
         
-        #texte de l'article
-        
+        #texte de l'article       
         doc=nlp(data1['articles'][i]['content'])
         L=[] #liste où on va mettre les verbes
         
@@ -50,6 +49,15 @@ def selection_2(verbs, nouns): # verbs =liste des verbes tokenisés de la phrase
     proportion=p/len(data1['articles'])  #on a fait une étude sur un échantillon, on en a déduit une probabilité qu'on applique ensuite au nombre total réel          
     return proportion
 
+
+def testons():
+    text=input("News:")
+    noms=selection_noms(text)
+    verbes=selection_verbes(text)
+    p=selection_2(verbes,noms)
+    return p
+    
+    
 
         
         

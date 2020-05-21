@@ -52,6 +52,6 @@ def mots_cles_a_chercher(mots_cles):
 
     for i in mots_cles:
         s=s+i+" "
-    print(s)
+    
     return (nombre_articles(s)) # donne le nombre d'articles final contenant ces mots-là !!
     
