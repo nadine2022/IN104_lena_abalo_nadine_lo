@@ -2,6 +2,9 @@ from apinews1 import nombre_articles
 from mots import mots_cles_a_chercher
 from mots import selection
 
+class OutOfRangeError(ValueError):
+    pass
+
 
 def give_score(fact):
     L= fact.split()
