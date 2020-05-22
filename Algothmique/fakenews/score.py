@@ -4,10 +4,6 @@ from mots import selection
 
 class OutOfRangeError(ValueError):
     pass
-<<<<<<< HEAD
-=======
-
->>>>>>> af5fca8ce9ac669b9a4c8ab9b1fe64928bf9413b
 
 
 def give_score():
